@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-retrogames-item',
   templateUrl: './retrogames-item.component.html',
   styleUrls: ['./retrogames-item.component.css']
 })
-export class RetrogamesItemComponent implements OnInit {
+export class RetrogamesItemComponent  {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Retrogame } from '../retrogame.model';
 
 @Component({
   selector: 'app-retrogames-list',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./retrogames-list.component.css']
 })
 export class RetrogamesListComponent  {
-  retrogames = [];
+  retrogames: Retrogame[] = [
+     new Retrogame("Yar's Revenge", 'The player controls an insect-like creature called a Yar who must nibble or shoot through a barrier in order to fire his Zorlon Cannon into the breach. The objective is to destroy the evil Qotile, which exists on the other side of the barrier. ... If the cannon blast hits a piece of the shield or misses, it is expended.', 'https://lh3.googleusercontent.com/proxy/4Qp2rYGksgnSM_P8P2Ty3z6nTj2gQ4hIBNJtPZO1BhoZTJfb9QspuVUIxfFePNs_r4m241_pVFl2ZW0DjZEBbZMHiYQvAeEj49RBjLpC448')
+  ];
  
+  
 
 }

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./retrogames-list.component.css']
 })
 export class RetrogamesListComponent  {
-
+  retrogames = [];
  
 
 }

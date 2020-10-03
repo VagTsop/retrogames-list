@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Retrogame } from '../../retrogame.model';
 
 @Component({
   selector: 'app-retrogames-item',
@@ -6,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./retrogames-item.component.css']
 })
 export class RetrogamesItemComponent  {
-
-
+ @Input() retrogames: Retrogame;
 
 }

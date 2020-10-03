@@ -1,5 +1,6 @@
 <a href="#"
-class="list-group-item clearfix">
+class="list-group-item clearfix"
+(click)="onSelected()">
 <div class="pull-left">
    <h4 class="list-group-item-heading">{{retrogames.name}}</h4>
    <p class="list-group-item-text">{{retrogames.description}}</p>
@@ -7,8 +8,8 @@ class="list-group-item clearfix">
 <span class="pull-right">
    <img
     [src]="retrogames.imagePath"
-    alt={{retrogames.name}} 
-    class="img-responsive" 
+    alt={{retrogames.name}}
+    class="img-responsive"
     style="max-height: 100px;">
  </span>
 </a>

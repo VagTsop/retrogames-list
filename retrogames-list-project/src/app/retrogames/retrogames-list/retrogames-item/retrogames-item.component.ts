@@ -1,3 +1,5 @@
+import { EventEmitter } from '@angular/core';
+import { Output } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { Retrogame } from '../../retrogame.model';
 
@@ -8,5 +10,11 @@ import { Retrogame } from '../../retrogame.model';
 })
 export class RetrogamesItemComponent  {
  @Input() retrogames: Retrogame;
+ @Output() retrogameSelected = new EventEmitter<void>();
+
+
+ onSelected() {
+   this.retrogameSelected.emit()
+ }
 
 }

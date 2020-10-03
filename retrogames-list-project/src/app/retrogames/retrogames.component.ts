@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Retrogame } from './retrogame.model';
 
 @Component({
   selector: 'app-retrogames',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./retrogames.component.css']
 })
 export class RetrogamesComponent  {
+selectedRetrogame: Retrogame;
 
- 
 
 }

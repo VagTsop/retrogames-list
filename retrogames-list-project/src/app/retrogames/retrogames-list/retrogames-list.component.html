@@ -1,12 +1,13 @@
 <div class="row">
     <div class="col-xs-12">
         <button class="btn btn-success">New Retrogame</button>
-    </div>  
+    </div>
 </div>
 <hr>
 <div class="row">
     <div class="col-xs-12">
         <app-retrogames-item *ngFor="let retrogameEl of retrogames"
-        [retrogames]="retrogameEl"></app-retrogames-item>
+        [retrogames]="retrogameEl"
+        (retrogameSelected)="onRetrogameSelected(retrogameEl)"></app-retrogames-item>
     </div>
 </div>

@@ -16,7 +16,7 @@ export class ShoppingEditComponent  {
  @ViewChild('amountInput', {static: true}) amountInputRef: ElementRef;
  @Output() infoAdded = new EventEmitter<GameInfo>();
 
-  onAddItem() {
+  onAddItem(): void {
     const infoName = this.nameInputRef.nativeElement.value;
     const infoReleaseDate = this.releaseDateInputRef.nativeElement.value;
     const infoGenre = this.genreInputRef.nativeElement.value;

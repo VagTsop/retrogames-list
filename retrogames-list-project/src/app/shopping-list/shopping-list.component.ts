@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { gameInfo } from '../shared/info.model';
+import { GameInfo } from '../shared/info.model';
 
 @Component({
   selector: 'app-shopping-list',
@@ -8,11 +8,13 @@ import { gameInfo } from '../shared/info.model';
 })
 export class ShoppingListComponent  {
 
-  info: gameInfo[] = [
-    new gameInfo("Yar's Revenge", 'May 1982', "Multidirectional shooter", "Atari, Inc.", 2),
-    new gameInfo('Pacman' ,'February 1981', "Maze game", "Midway Games", 4)
+  info: GameInfo[] = [
+    new GameInfo('Yar\'s Revenge', 'May 1982', 'Multidirectional shooter', 'Atari, Inc.', 2),
+    new GameInfo('Pacman', 'February 1981', 'Maze game', 'Midway Games', 4)
   ] ;
-  
 
- 
+  onInfoAdded(gameInfo: GameInfo) {
+    this.info.push(gameInfo)
+  }
+
 }

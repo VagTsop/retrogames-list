@@ -13,8 +13,8 @@ export class ShoppingListComponent  {
     new GameInfo('Pacman', 'February 1981', 'Maze game', 'Midway Games', 4)
   ] ;
 
-  onInfoAdded(gameInfo: GameInfo) {
-    this.info.push(gameInfo)
+  onInfoAdded(gameInfo: GameInfo): void  {
+    this.info.push(gameInfo);
   }
 
 }

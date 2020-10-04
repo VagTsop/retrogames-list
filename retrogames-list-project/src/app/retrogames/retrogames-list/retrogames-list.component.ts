@@ -14,7 +14,7 @@ export class RetrogamesListComponent {
     new Retrogame('Ms. Pacman', 'It is the sequel to Pac-Man (1980), and the first entry in the series to not be made by Namco. Controlling the titular character, the player is tasked with eating all of the pellets in an enclosed maze while avoiding four colored ghosts.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBi4mdLKLHVFz-sT3x5Egk9255JY_0fqgPhw&usqp=CAU')
   ];
 
-  onRetrogameSelected(retrogame: Retrogame) {
+  onRetrogameSelected(retrogame: Retrogame): void {
     this.retrogameWasSelected.emit(retrogame);
   }
 

@@ -8,8 +8,20 @@ import { RetrogameService } from './retrogames.service';
   styleUrls: ['./retrogames.component.css'],
   providers: [RetrogameService]
 })
-export class RetrogamesComponent  {
-selectedRetrogame: Retrogame;
+export class RetrogamesComponent {
+  selectedRetrogame: Retrogame;
 
+  constructor(private retrogameService: RetrogameService) {
+
+  }
+
+  ngOnInit() {
+    this.retrogameService.retrogameSelected
+      .subscribe(
+        (retrogame: Retrogame) => {
+          this.selectedRetrogame = retrogame;
+        }
+      );
+  }
 
 }

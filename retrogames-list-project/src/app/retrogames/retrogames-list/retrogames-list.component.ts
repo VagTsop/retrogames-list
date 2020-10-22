@@ -1,4 +1,3 @@
-import { EventEmitter, Output } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { Retrogame } from '../retrogame.model';
@@ -10,7 +9,6 @@ import { RetrogameService } from '../retrogames.service';
   styleUrls: ['./retrogames-list.component.css']
 })
 export class RetrogamesListComponent implements OnInit {
-  @Output() retrogameWasSelected = new EventEmitter<Retrogame>();
   retrogames: Retrogame[];
 
  constructor(private retrogameService: RetrogameService) {
@@ -18,10 +16,6 @@ export class RetrogamesListComponent implements OnInit {
 
   ngOnInit() {
     this.retrogames = this.retrogameService.getRetrogames();
-  }
-
-  onRetrogameSelected(retrogame: Retrogame): void {
-    this.retrogameWasSelected.emit(retrogame);
   }
 
 }

@@ -17,8 +17,14 @@ export class ShoppingListComponent implements OnInit  {
 
   ngOnInit() {
    this.info = this.slService.getGameInfo();
+   this.slService.gameInfoChanged
+      .subscribe(
+        (info: GameInfo[]) => {
+          this.info = info;
+        }
+      );
   }
 
- 
+
 
 }

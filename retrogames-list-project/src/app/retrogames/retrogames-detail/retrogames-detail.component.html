@@ -15,7 +15,7 @@
         Manage Retrogame <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">To Shopping List</a></li>
+        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
         <li><a href="#">Edit Retrogame</a></li>
         <li><a href="#">Delete Retrogame</a></li>
       </ul>
@@ -32,8 +32,7 @@
 <div class="row">
   <div class="col-xs-12">
     <ul class="list-group">
-      <li class="list-group-item"
-      *ngFor="let info of retrogame.info">
+      <li class="list-group-item" *ngFor="let info of retrogame.info">
         {{ info.name }} - {{info.releaseDate}} - {{info.genre}} -
         {{ info.developers }} - {{ info.amount }}
       </li>

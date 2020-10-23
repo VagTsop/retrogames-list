@@ -1,7 +1,10 @@
+import { Injectable } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { GameInfo } from '../shared/info.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Retrogame } from './retrogame.model';
 
+@Injectable()
 export class RetrogameService {
  retrogameSelected = new EventEmitter<Retrogame>();
 
@@ -25,7 +28,14 @@ export class RetrogameService {
 
     ];
 
+  constructor(private slService: ShoppingListService) {}
+
   getRetrogames() {
    return this.retrogames.slice();
   }
+
+  addGameInfoToShoppingList(info: GameInfo[]) {
+    this.slService.addGamesInfo(info);
+  }
+
 }

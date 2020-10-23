@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GameInfo } from '../shared/info.model';
+import { ShoppingListService } from './shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
-export class ShoppingListComponent  {
+export class ShoppingListComponent implements OnInit  {
 
-  info: GameInfo[] = [
-    new GameInfo('Yar\'s Revenge', 'May 1982', 'Multidirectional shooter', 'Atari, Inc.', 2),
-    new GameInfo('Pacman', 'February 1981', 'Maze game', 'Midway Games', 4)
-  ] ;
+  info: GameInfo[] ;
 
-  onInfoAdded(gameInfo: GameInfo): void  {
-    this.info.push(gameInfo);
+  constructor(private slService: ShoppingListService) {
+
   }
+
+  ngOnInit() {
+   this.info = this.slService.getGameInfo();
+  }
+
+ 
 
 }

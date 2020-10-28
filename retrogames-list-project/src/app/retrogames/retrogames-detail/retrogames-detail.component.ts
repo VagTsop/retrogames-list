@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Retrogame } from '../retrogame.model';
 import { RetrogameService } from '../retrogames.service';
 
@@ -13,7 +13,8 @@ retrogame: Retrogame;
 id: number;
 
 constructor(private retrogameService: RetrogameService,
-            private route: ActivatedRoute) {
+            private route: ActivatedRoute,
+            private router: Router) {
 }
 
 ngOnInit(){
@@ -29,6 +30,11 @@ ngOnInit(){
 
  onAddToShoppingList(){
   this.retrogameService.addGameInfoToShoppingList(this.retrogame.info);
+}
+
+onEditRecipe() {
+  this.router.navigate(['edit'], {relativeTo: this.route});
+//this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
 }
 
 }

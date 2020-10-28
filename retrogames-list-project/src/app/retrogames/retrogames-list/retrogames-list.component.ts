@@ -1,5 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Retrogame } from '../retrogame.model';
 import { RetrogameService } from '../retrogames.service';
 
@@ -11,11 +12,15 @@ import { RetrogameService } from '../retrogames.service';
 export class RetrogamesListComponent implements OnInit {
   retrogames: Retrogame[];
 
- constructor(private retrogameService: RetrogameService) {
- }
-
+  constructor(private retrogameService: RetrogameService,
+              private router: Router,
+              private route: ActivatedRoute) {
+  }
   ngOnInit() {
     this.retrogames = this.retrogameService.getRetrogames();
   }
 
+  onNewRetrogame() {
+    this.router.navigate(['new'], {relativeTo: this.route});
+  }
 }

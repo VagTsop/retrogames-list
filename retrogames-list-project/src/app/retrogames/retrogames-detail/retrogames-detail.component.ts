@@ -1,5 +1,5 @@
-import { Input } from '@angular/core';
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Retrogame } from '../retrogame.model';
 import { RetrogameService } from '../retrogames.service';
 
@@ -9,9 +9,23 @@ import { RetrogameService } from '../retrogames.service';
   styleUrls: ['./retrogames-detail.component.css']
 })
 export class RetrogamesDetailComponent  {
- @Input() retrogame: Retrogame;
+retrogame: Retrogame;
+id: number;
 
-constructor(private retrogameService: RetrogameService) {}
+constructor(private retrogameService: RetrogameService,
+            private route: ActivatedRoute) {
+}
+
+ngOnInit(){
+   this.route.params
+   .subscribe(
+     (params: Params) => {
+      this.id = +params['id'];
+      this.retrogame = this.retrogameService.getRetrogame(this.id);
+     }
+   );
+}
+
 
  onAddToShoppingList(){
   this.retrogameService.addGameInfoToShoppingList(this.retrogame.info);

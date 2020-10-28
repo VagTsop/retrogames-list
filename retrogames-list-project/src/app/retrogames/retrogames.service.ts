@@ -34,6 +34,10 @@ export class RetrogameService {
    return this.retrogames.slice();
   }
 
+  getRetrogame(index: number) {
+    return this.retrogames[index];
+  }
+
   addGameInfoToShoppingList(info: GameInfo[]) {
     this.slService.addGamesInfo(info);
   }

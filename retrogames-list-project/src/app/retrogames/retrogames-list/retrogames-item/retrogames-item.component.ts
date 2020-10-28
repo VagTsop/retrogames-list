@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Retrogame } from '../../retrogame.model';
-import { RetrogameService } from '../../retrogames.service';
 
 @Component({
   selector: 'app-retrogames-item',
@@ -9,14 +8,5 @@ import { RetrogameService } from '../../retrogames.service';
 })
 export class RetrogamesItemComponent  {
  @Input() retrogames: Retrogame;
-
-constructor(private retrogameService: RetrogameService) {
-
 }
 
-
- onSelected() {
-  this.retrogameService.retrogameSelected.emit(this.retrogames);
- }
-
-}

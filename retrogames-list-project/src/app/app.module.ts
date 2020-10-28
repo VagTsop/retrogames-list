@@ -14,6 +14,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RetrogameStartComponent } from './retrogames/retrogame-start/retrogame-start.component';
+import { RetrogameEditComponent } from './retrogames/retrogame-edit/retrogame-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RetrogameStartComponent } from './retrogames/retrogame-start/retrogame-
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    RetrogameStartComponent
+    RetrogameStartComponent,
+    RetrogameEditComponent
   ],
   imports: [
     BrowserModule,

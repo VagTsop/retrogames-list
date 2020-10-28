@@ -8,5 +8,6 @@ import { Retrogame } from '../../retrogame.model';
 })
 export class RetrogamesItemComponent  {
  @Input() retrogames: Retrogame;
+ @Input() index: number;
 }
 

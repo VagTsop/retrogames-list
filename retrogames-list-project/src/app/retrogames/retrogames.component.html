@@ -3,11 +3,6 @@
     <app-retrogames-list></app-retrogames-list>
   </div>
   <div class="col-md-7">
-    <app-retrogames-detail
-      *ngIf="selectedRetrogame; else infoText"
-      [retrogame]="selectedRetrogame"></app-retrogames-detail>
-      <ng-template #infoText>
-        <p>Please select a Retrogame!</p>
-      </ng-template>
+  <router-outlet></router-outlet>
   </div>
 </div>

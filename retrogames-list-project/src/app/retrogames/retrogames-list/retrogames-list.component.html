@@ -6,7 +6,7 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <app-retrogames-item *ngFor="let retrogameEl of retrogames"
-        [retrogames]="retrogameEl"></app-retrogames-item>
-    </div>
+        <app-retrogames-item *ngFor="let retrogameEl of retrogames; let i = index"
+        [retrogames]="retrogameEl" [index]="i"></app-retrogames-item>
+      </div>
 </div>

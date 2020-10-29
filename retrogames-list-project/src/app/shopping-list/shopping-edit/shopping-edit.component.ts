@@ -8,14 +8,14 @@ import { ShoppingListService } from '../shopping-list.service';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent  {
- @ViewChild('nameInput', {static: true}) nameInputRef: ElementRef;
- @ViewChild('releaseDateInput', {static: true}) releaseDateInputRef: ElementRef;
- @ViewChild('genreInput', {static: true}) genreInputRef: ElementRef;
- @ViewChild('developerInput', {static: true}) developerInputRef: ElementRef;
- @ViewChild('amountInput', {static: true}) amountInputRef: ElementRef;
+export class ShoppingEditComponent {
+  @ViewChild('nameInput', { static: true }) nameInputRef: ElementRef;
+  @ViewChild('releaseDateInput', { static: true }) releaseDateInputRef: ElementRef;
+  @ViewChild('genreInput', { static: true }) genreInputRef: ElementRef;
+  @ViewChild('developerInput', { static: true }) developerInputRef: ElementRef;
+  @ViewChild('amountInput', { static: true }) amountInputRef: ElementRef;
 
- constructor(private slService: ShoppingListService) {}
+  constructor(private slService: ShoppingListService) { }
 
   onAddItem(): void {
     const infoName = this.nameInputRef.nativeElement.value;

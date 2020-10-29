@@ -7,17 +7,17 @@ import { ShoppingListService } from './shopping-list.service';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
-export class ShoppingListComponent implements OnInit  {
+export class ShoppingListComponent implements OnInit {
 
-  info: GameInfo[] ;
+  info: GameInfo[];
 
   constructor(private slService: ShoppingListService) {
 
   }
 
   ngOnInit() {
-   this.info = this.slService.getGameInfo();
-   this.slService.gameInfoChanged
+    this.info = this.slService.getGameInfo();
+    this.slService.gameInfoChanged
       .subscribe(
         (info: GameInfo[]) => {
           this.info = info;

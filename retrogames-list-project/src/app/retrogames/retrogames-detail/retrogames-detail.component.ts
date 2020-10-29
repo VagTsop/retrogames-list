@@ -8,33 +8,33 @@ import { RetrogameService } from '../retrogames.service';
   templateUrl: './retrogames-detail.component.html',
   styleUrls: ['./retrogames-detail.component.css']
 })
-export class RetrogamesDetailComponent  {
-retrogame: Retrogame;
-id: number;
+export class RetrogamesDetailComponent {
+  retrogame: Retrogame;
+  id: number;
 
-constructor(private retrogameService: RetrogameService,
-            private route: ActivatedRoute,
-            private router: Router) {
-}
+  constructor(private retrogameService: RetrogameService,
+    private route: ActivatedRoute,
+    private router: Router) {
+  }
 
-ngOnInit(){
-   this.route.params
-   .subscribe(
-     (params: Params) => {
-      this.id = +params['id'];
-      this.retrogame = this.retrogameService.getRetrogame(this.id);
-     }
-   );
-}
+  ngOnInit() {
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.retrogame = this.retrogameService.getRetrogame(this.id);
+        }
+      );
+  }
 
 
- onAddToShoppingList(){
-  this.retrogameService.addGameInfoToShoppingList(this.retrogame.info);
-}
+  onAddToShoppingList() {
+    this.retrogameService.addGameInfoToShoppingList(this.retrogame.info);
+  }
 
-onEditRecipe() {
-  this.router.navigate(['edit'], {relativeTo: this.route});
-//this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
-}
+  onEditRecipe() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+    //this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+  }
 
 }

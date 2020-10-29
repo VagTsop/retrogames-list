@@ -17,9 +17,9 @@ export class ShoppingListService {
     this.gameInfoChanged.emit(this.info.slice());
   }
   addGamesInfo(info: GameInfo[]) {
-  //   for (let gameInfo of info ) {
-  //     this.addGameInfo(gameInfo)
-  //   }
+    //   for (let gameInfo of info ) {
+    //     this.addGameInfo(gameInfo)
+    //   }
     this.info.push(...info);
     this.gameInfoChanged.emit(this.info.slice());
   }

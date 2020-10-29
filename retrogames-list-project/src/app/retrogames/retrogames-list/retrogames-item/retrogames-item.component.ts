@@ -6,8 +6,8 @@ import { Retrogame } from '../../retrogame.model';
   templateUrl: './retrogames-item.component.html',
   styleUrls: ['./retrogames-item.component.css']
 })
-export class RetrogamesItemComponent  {
- @Input() retrogames: Retrogame;
- @Input() index: number;
+export class RetrogamesItemComponent {
+  @Input() retrogames: Retrogame;
+  @Input() index: number;
 }
 

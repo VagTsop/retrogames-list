@@ -14,12 +14,12 @@ export class RetrogameEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params
-     .subscribe(
-      (params: Params) => {
-        this.id = +params['id'];
-        this.editMode = params['id'] != null;
-      }
-     );
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.editMode = params['id'] != null;
+        }
+      );
   }
 
 }

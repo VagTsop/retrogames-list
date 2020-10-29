@@ -9,12 +9,14 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/retrogames', pathMatch: 'full' },
-  { path: 'retrogames', component: RetrogamesComponent, children: [
-    { path: '', component: RetrogameStartComponent},
-    { path: 'new', component:  RetrogameEditComponent},
-    { path: ':id', component:  RetrogamesDetailComponent},
-    { path: ':id/edit', component:  RetrogameEditComponent}
-  ] },
+  {
+    path: 'retrogames', component: RetrogamesComponent, children: [
+      { path: '', component: RetrogameStartComponent },
+      { path: 'new', component: RetrogameEditComponent },
+      { path: ':id', component: RetrogamesDetailComponent },
+      { path: ':id/edit', component: RetrogameEditComponent }
+    ]
+  },
   { path: 'shopping-list', component: ShoppingListComponent },
 ];
 

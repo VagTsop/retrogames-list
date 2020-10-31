@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { EventEmitter } from '@angular/core';
 import { GameInfo } from '../shared/info.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Retrogame } from './retrogame.model';
 
 @Injectable()
 export class RetrogameService {
-  retrogameSelected = new EventEmitter<Retrogame>();
 
   private retrogames: Retrogame[] = [
     new Retrogame(

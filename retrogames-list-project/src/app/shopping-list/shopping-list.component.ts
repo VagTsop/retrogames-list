@@ -17,7 +17,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.info = this.slService.getGameInfo();
     this.slService.gameInfoChanged
       .subscribe(

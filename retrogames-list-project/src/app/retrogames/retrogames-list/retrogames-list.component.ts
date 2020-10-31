@@ -13,14 +13,14 @@ export class RetrogamesListComponent implements OnInit {
   retrogames: Retrogame[];
 
   constructor(private retrogameService: RetrogameService,
-    private router: Router,
-    private route: ActivatedRoute) {
+              private router: Router,
+              private route: ActivatedRoute) {
   }
-  ngOnInit() {
+  ngOnInit(): void {
     this.retrogames = this.retrogameService.getRetrogames();
   }
 
-  onNewRetrogame() {
+  onNewRetrogame(): void {
     this.router.navigate(['new'], { relativeTo: this.route });
   }
 }

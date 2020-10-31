@@ -28,15 +28,15 @@ export class RetrogameService {
 
   constructor(private slService: ShoppingListService) { }
 
-  getRetrogames() {
+  getRetrogames(): Retrogame [] {
     return this.retrogames.slice();
   }
 
-  getRetrogame(index: number) {
+  getRetrogame(index: number): Retrogame {
     return this.retrogames[index];
   }
 
-  addGameInfoToShoppingList(info: GameInfo[]) {
+  addGameInfoToShoppingList(info: GameInfo[]): void {
     this.slService.addGamesInfo(info);
   }
 

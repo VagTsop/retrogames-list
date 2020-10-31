@@ -8,15 +8,15 @@ export class ShoppingListService {
     new GameInfo('Pacman', 'February 1981', 'Maze game', 'Midway Games', 4)
   ];
 
-  getGameInfo() {
+  getGameInfo(): GameInfo[] {
     return this.info.slice();
   }
 
-  addGameInfo(info: GameInfo) {
+  addGameInfo(info: GameInfo): void {
     this.info.push(info);
     this.gameInfoChanged.next(this.info.slice());
   }
-  addGamesInfo(info: GameInfo[]) {
+  addGamesInfo(info: GameInfo[]): void {
     //   for (let gameInfo of info ) {
     //     this.addGameInfo(gameInfo)
     //   }

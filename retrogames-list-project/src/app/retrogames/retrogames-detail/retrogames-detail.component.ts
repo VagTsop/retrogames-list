@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Retrogame } from '../retrogame.model';
 import { RetrogameService } from '../retrogames.service';
@@ -8,16 +8,16 @@ import { RetrogameService } from '../retrogames.service';
   templateUrl: './retrogames-detail.component.html',
   styleUrls: ['./retrogames-detail.component.css']
 })
-export class RetrogamesDetailComponent {
+export class RetrogamesDetailComponent implements OnInit {
   retrogame: Retrogame;
   id: number;
 
   constructor(private retrogameService: RetrogameService,
-    private route: ActivatedRoute,
-    private router: Router) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -28,13 +28,13 @@ export class RetrogamesDetailComponent {
   }
 
 
-  onAddToShoppingList() {
+  onAddToShoppingList(): void {
     this.retrogameService.addGameInfoToShoppingList(this.retrogame.info);
   }
 
-  onEditRecipe() {
+  onEditRecipe(): void {
     this.router.navigate(['edit'], { relativeTo: this.route });
-    //this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+ // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
 }

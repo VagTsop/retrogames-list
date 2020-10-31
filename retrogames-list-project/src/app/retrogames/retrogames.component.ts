@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Retrogame } from './retrogame.model';
 import { RetrogameService } from './retrogames.service';
 
 @Component({
@@ -9,19 +8,11 @@ import { RetrogameService } from './retrogames.service';
   providers: [RetrogameService]
 })
 export class RetrogamesComponent {
-  selectedRetrogame: Retrogame;
 
-  constructor(private retrogameService: RetrogameService) {
+  constructor() {
 
   }
 
-  ngOnInit() {
-    this.retrogameService.retrogameSelected
-      .subscribe(
-        (retrogame: Retrogame) => {
-          this.selectedRetrogame = retrogame;
-        }
-      );
-  }
+
 
 }

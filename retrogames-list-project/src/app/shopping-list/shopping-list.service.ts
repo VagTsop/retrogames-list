@@ -1,8 +1,8 @@
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 import { GameInfo } from '../shared/info.model';
 
 export class ShoppingListService {
-  gameInfoChanged = new EventEmitter<GameInfo[]>();
+  gameInfoChanged = new Subject<GameInfo[]>();
   private info: GameInfo[] = [
     new GameInfo('Yar\'s Revenge', 'May 1982', 'Multidirectional shooter', 'Atari, Inc.', 2),
     new GameInfo('Pacman', 'February 1981', 'Maze game', 'Midway Games', 4)
@@ -14,14 +14,14 @@ export class ShoppingListService {
 
   addGameInfo(info: GameInfo) {
     this.info.push(info);
-    this.gameInfoChanged.emit(this.info.slice());
+    this.gameInfoChanged.next(this.info.slice());
   }
   addGamesInfo(info: GameInfo[]) {
     //   for (let gameInfo of info ) {
     //     this.addGameInfo(gameInfo)
     //   }
     this.info.push(...info);
-    this.gameInfoChanged.emit(this.info.slice());
+    this.gameInfoChanged.next(this.info.slice());
   }
 
 }
